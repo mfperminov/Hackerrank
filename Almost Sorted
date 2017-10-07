@@ -1,0 +1,28 @@
+n=int(input())
+arr=[int(x) for x in input().split()]
+res='no'
+si=0
+l=[]
+flag=False
+sort_ar=sorted(arr)
+if arr==sort_ar:
+    res='yes'
+else:
+    for i in range(n):
+        if arr[i]!=sort_ar[i]:
+            si=si+1
+            l.append(i)            
+    if si==2:
+        res='yes'
+        print(res)
+        print('swap %d %d' % (l[0]+1,l[1]+1))
+    else:
+        for i in range(len(l)-1):
+            if arr[l[i+1]]>arr[l[i]]:
+                flag=True
+        if not flag:
+            res='yes'
+            print(res)
+            print('reverse %d %d' % (l[0]+1, l[-1]+1))
+        else:
+            print(res)
