@@ -1,0 +1,8 @@
+t=int(input())
+for i in range(t):
+    bit=int(input())
+    s=''
+    k='0'*(32-len(format(bit, 'b')))+format(bit, 'b')
+    for item in k:
+        s=s+'{d}'.format(d=1 if item=='0' else 0)       
+    print(int(s,base=2))
